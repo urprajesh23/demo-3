@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Analysis Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="landing-container">
+        <h1>Welcome to Stock Analysis Dashboard</h1>
+        <div class="button-container">
+            <div class="card" onclick="location.href='/longterm'">
+                <img src="{{ url_for('static', filename='icons/long_term.png') }}" alt="Long-Term">
+                <h2>Long-Term</h2>
+            </div>
+            <div class="card" onclick="location.href='/shortterm'">
+                <img src="{{ url_for('static', filename='icons/short_term.png') }}" alt="Short-Term">
+                <h2>Short-Term</h2>
+            </div>
+            <div class="card" onclick="location.href='/dividend'">
+                <img src="{{ url_for('static', filename='icons/dividend.png') }}" alt="Dividend">
+                <h2>Dividend</h2>
+            </div>
+            <div class="card" onclick="location.href='/penny'">
+                <img src="{{ url_for('static', filename='icons/penny.png') }}" alt="Penny Stocks">
+                <h2>Penny Stocks</h2>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

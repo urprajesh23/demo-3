@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <h1 class="main-title">{{ title }}</h1>
+        <table class="stocks-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>{{ metric }}</th>
+                    <th>CMP Rs.</th>
+                    <th>ROE %</th>
+                    <th>P/E</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stock in stocks %}
+                <tr>
+                    <td>{{ stock['Name'] }}</td>
+                    <td>{{ stock[metric] | round(2) }}</td>
+                    <td>{{ stock['CMP Rs.'] | round(2) }}</td>
+                    <td>{{ stock['ROE %'] | round(2) }}</td>
+                    <td>{{ stock['P/E'] | round(2) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button onclick="window.history.back()" class="back-button">Go Back</button>
+    </div>
+</body>
+</html>
